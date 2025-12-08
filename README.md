@@ -1,6 +1,6 @@
-# Credit Card Fraud Detection Example
+# Final Project -- Addie Draper
 
-This repository is an example template that demonstrates how to structure a machine learning project for reproducibility. It includes a minimal end-to-end workflow for detecting credit card fraud using scikit‑learn.
+This repository is my final project for MAT311, about modelling and machine learning. 
 
 ## Purpose
 
