@@ -1,10 +1,10 @@
 # Final Project -- Addie Draper
 
-This repository is my final project for MAT311, about modelling and machine learning. 
+This repository is my final project for MAT311, about modelling and machine learning, in the context of a company and customers churning.
 
 ## Purpose
 
-The layout of this project mirrors the recommended directory organization shown in the assignment instructions. It can be used as a starting point for your own work or as a reference when showcasing your skills to potential employers. All code is well documented and grouped by task so you can easily build upon it.
+The purpose of this project was to take a dataset about customers in a company and the data to predict whether or not that customer is going to churn. Using features like the total amount of money they spent on the product, the number of support calls they had, and others, I was able to create numerous models, including a knn model, a decision tree model, and a random forest model. 
 
 ## Project layout
 
@@ -30,7 +30,6 @@ The layout of this project mirrors the recommended directory organization shown 
     │   └── build_features.py
     ├── models/
     │   ├── train_model.py
-    │   ├── dumb_model.py
     │   └── knn_model.py
     │   └── decision_tree_model.py
     │   └── random_forest_model.py
@@ -41,9 +40,7 @@ The layout of this project mirrors the recommended directory organization shown 
         └── performance.py
 ```
 
-`main.py` imports the modules inside `src/` and executes them to reproduce the analysis and results. Jupyter notebooks are provided only for prototyping and exploration—they are **not** meant to be the main entry point of the project.
-
-Some directories such as `data/external/`, `src/utils/` and `tests/` may be empty, but the folder structure is provided to illustrate how a complete project should look.
+`main.py` imports the modules inside `src/` and executes them to reproduce the analysis and results. Jupyter notebooks were used for data exploration and model creation before converting the code into python scripts. 
 
 ## How to run:
 
@@ -55,5 +52,5 @@ conda activate final_proj
 python main.py
 ```
 
-This will load the dataset, perform basic feature engineering, train a simple model and produce visualizations similar to those in the notebook.
+This will load the dataset, perform basic feature engineering, train a simple model and produce visualizations similar to those in the notebooks.
 The cleaned data will be written to `data/processed/` and all plots will be displayed interactively.
