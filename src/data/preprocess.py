@@ -5,38 +5,11 @@ from .load_data import load_dataset
 
 
 def clean_dataset(df: pd.DataFrame) -> pd.DataFrame:
-    """Cleans the dataset by replacing null values with the rounded column mean."""
-    ##return df.apply(lambda col: col.fillna(round(col.mean())) if col.dtype.kind in 'biufc' else col )
-    """
-    df_filled = df.copy()
-    for col in df_filled.select_dtypes(include="number"):
-        df_filled[col] = df_filled[col].fillna(round(df_filled[col].mean()))
-    return df_filled """
+    """Cleans the dataset by replacing null values in the feature columns
+    with the rounded column mean."""
 
-    """
-    df = df.replace("none", np.nan)
-
-    numeric_cols = df.select_dtypes(include="number").columns
+    """Means were calculated previously and are hardcoded here for simplicity"""
     
-    for col in numeric_cols:
-        mean_val = df[col].mean()
-        if pd.notna(mean_val):  # only if mean is valid
-            df[col] = df[col].fillna(round(mean_val))
-    
-    for col in df.columns:
-        if col == "Support Calls":
-            df[col] = df[col].astype(int)
-    """
-    """
-    Clean the training dataset by replacing 'none' with NaN and filling
-    specific columns with default values.
-    
-    Parameters:
-        df (pd.DataFrame): Input training dataset
-    
-    Returns:
-        pd.DataFrame: Cleaned dataset
-    """
     df = df.copy()
 
     # Replace string "none" with actual NaN
@@ -59,7 +32,6 @@ def clean_dataset(df: pd.DataFrame) -> pd.DataFrame:
     if "Last Interaction" in df.columns:
         df["Last Interaction"] = df["Last Interaction"].fillna(14.0)
 
-    print(df.head())
         
 
     return df

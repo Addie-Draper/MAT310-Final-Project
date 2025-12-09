@@ -13,12 +13,7 @@ def plot_eda(df: pd.DataFrame) -> None:
     sns.countplot(x='Support Calls', data=df, hue="Churn")
     plt.title('Support Calls Distribution vs Churn')
     plt.show()
-    
-    """
-    sns.countplot(x='Total Spend', data=df, hue="Churn")
-    plt.title('Total Spend Distribution vs Churn')
-    plt.show()
-    """
+
 
     plt.figure(figsize=(12, 6))
     sns.countplot(x='Last Interaction', data=df, hue="Churn")
@@ -26,8 +21,19 @@ def plot_eda(df: pd.DataFrame) -> None:
     plt.tight_layout()
     plt.show()
 
+    #plt.figure(figsize=(12, 6))
+    sns.countplot(x='Contract Length', data=df, hue="Churn")
+    plt.title('Contract Length vs Churn')
+    plt.tight_layout()
+    plt.show()
+
     sns.histplot(df['Total Spend'], bins=30)
     plt.title('Total Spend Distribution')
+    plt.show()
+
+    sns.histplot(data=df, x='Usage Frequency', hue='Churn')
+    plt.title('Usage Frequency Distribution vs Churn')
+    plt.tight_layout()
     plt.show()
 
     # Bivariate visualizations colored by churn
@@ -41,22 +47,6 @@ def plot_eda(df: pd.DataFrame) -> None:
     plt.legend(title='Churn', labels=['Non-Churn', 'Churn'])
     plt.show()
 
-    """
-    plt.figure(figsize=(10, 6))
-    sns.scatterplot(
-        data=df,
-        x='distance_from_home',
-        y='ratio_to_median_purchase_price',
-        hue='fraud',
-        palette={0: 'green', 1: 'red'},
-    )
-    plt.title(
-        'Churn vs Non-Churn: Distance from Home vs Ratio to Median Purchase Price'
-    )
-    plt.xlabel('Distance from Home')
-    plt.ylabel('Ratio to Median Purchase Price')
-    plt.show()
-    """
 
 
 if __name__ == "__main__":

@@ -5,7 +5,6 @@ from src.data.preprocess import clean_dataset
 from src.visualization.eda import plot_eda
 from src.models.train_model import split_data, plot_roc_curve
 from src.models.knn_model import train_knn_model
-from src.models.dumb_model import train_dumb_model
 from src.visualization.performance import (
     plot_confusion_matrices,
     plot_performance_comparison,

@@ -1,9 +1,8 @@
 """Feature engineering placeholder module."""
 
-# Future feature engineering functions will be added here.
+# Functions are for feature engineering and tasks such as selecting relevant features go here.
 def select_features(df):
     """Select relevant features from the DataFrame."""
-    # Placeholder for feature selection logic
     df = df[["Support Calls", "Total Spend", "Usage Frequency", "Age", "Contract Length", "Last Interaction","Churn"]]
     return df
 
